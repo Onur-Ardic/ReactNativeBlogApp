@@ -1,0 +1,16 @@
+{
+  "Blogs": [
+    {
+      "id": "1",
+      "title": "Javascript nedir",
+      "desc": "Javascript hemen hemen her yönde kullanılan bir yazılım dilidir",
+      "content": "Javascript hemen hemen her yönde kullanılan bir yazılım dilidir"
+    },
+    {
+      "id": "2",
+      "title": "React Nedir",
+      "desc": "React bir js kütüphanesidir",
+      "content": "Web ve mobil uygulamarı için kullanılan bir js kütüphanesidir"
+    }
+  ]
+}
