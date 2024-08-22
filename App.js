@@ -1,20 +1,45 @@
+import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
-
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { BlogProvider } from './context/BlogContext'
 import IndexScreen from './screens/IndexScreen/IndexScreen'
 import CreateScreen from './screens/CreateScreen/CreateScreen'
+import BlogDetailScreen from './screens/BlogDetail/BlogDetailScreen'
 
 const Stack = createNativeStackNavigator()
+
 export default function App() {
   return (
     <BlogProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Index" component={IndexScreen} />
+          <Stack.Screen
+            name="Anasayfa"
+            component={IndexScreen}
+            options={({ navigation }) => ({
+              headerTitle: 'Bloglar',
+              headerRight: () => (
+                <FontAwesome6
+                  onPress={() => navigation.navigate('Create Blog')}
+                  name="add"
+                  size={24}
+                  color="#fff"
+                />
+              ),
+              headerTitleStyle: {
+                fontSize: 20,
+              },
+              headerStyle: {
+                backgroundColor: '#f4511e',
+              },
+              headerTintColor: '#fff',
+            })}
+          />
           <Stack.Screen name="Create Blog" component={CreateScreen} />
+          <Stack.Screen name="Blog" component={BlogDetailScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </BlogProvider>
