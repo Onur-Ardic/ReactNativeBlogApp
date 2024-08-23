@@ -1,10 +1,12 @@
-import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React, { useContext } from 'react'
 import { useApi } from '../../hooks/useApi'
 import CoursesCard from '../../components/Index/CoursesCard'
+import BlogContext from '../../context/BlogContext'
 
 export default function IndexScreen() {
-  const { data } = useApi()
+  const { refresh } = useContext(BlogContext)
+  const { data } = useApi(refresh)
 
   return (
     <View>
@@ -12,5 +14,3 @@ export default function IndexScreen() {
     </View>
   )
 }
-
-const styles = StyleSheet.create({})

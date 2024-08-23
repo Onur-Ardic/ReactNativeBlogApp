@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import api from '../service/api'
 
-export const useApi = () => {
+export const useApi = (refresh) => {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
 
@@ -14,8 +14,9 @@ export const useApi = () => {
         setError(error.message)
       }
     }
+
     fetchData()
-  }, [])
+  }, [refresh])
 
   return { data, error }
 }
