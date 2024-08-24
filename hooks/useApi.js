@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import api from '../service/api'
+import BlogContext from '../context/BlogContext'
 
 export const useApi = (refresh) => {
-  const [data, setData] = useState(null)
+  const { data, setData } = useContext(BlogContext)
   const [error, setError] = useState(null)
 
   useEffect(() => {

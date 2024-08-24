@@ -43,7 +43,7 @@ export default function BlogDetailScreen({ route }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{blogDetail.title}</Text>
-      <Text style={styles.description}>{blogDetail.desc}</Text>
+      <Text style={styles.description}>{blogDetail.description}</Text>
       <Text style={styles.content}>{blogDetail.content}</Text>
     </View>
   )

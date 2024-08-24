@@ -8,6 +8,7 @@ import { BlogProvider } from './context/BlogContext'
 import IndexScreen from './screens/IndexScreen/IndexScreen'
 import CreateScreen from './screens/CreateScreen/CreateScreen'
 import BlogDetailScreen from './screens/BlogDetail/BlogDetailScreen'
+import UpdateBlogScreen from './screens/UpdateBlogScreen.js/UpdateBlogScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -39,7 +40,32 @@ export default function App() {
             })}
           />
           <Stack.Screen name="Create Blog" component={CreateScreen} />
-          <Stack.Screen name="Blog" component={BlogDetailScreen} />
+          <Stack.Screen
+            name="Blog"
+            component={BlogDetailScreen}
+            options={({ route, navigation }) => ({
+              headerRight: () => (
+                <FontAwesome6
+                  onPress={() =>
+                    navigation.navigate('Update Blog', {
+                      id: route.params.id,
+                    })
+                  }
+                  name="edit"
+                  size={24}
+                  color="#fff"
+                />
+              ),
+              headerTitleStyle: {
+                fontSize: 20,
+              },
+              headerStyle: {
+                backgroundColor: '#f4511e',
+              },
+              headerTintColor: '#fff',
+            })}
+          />
+          <Stack.Screen name="Update Blog" component={UpdateBlogScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </BlogProvider>

@@ -1,22 +1,16 @@
 {
   "Blogs": [
     {
-      "id": "1",
-      "title": "Javascript nedir",
-      "desc": "Javascript hemen hemen her yönde kullanılan bir yazılım dilidir",
-      "content": "Javascript hemen hemen her yönde kullanılan bir yazılım dilidir"
+      "title": "Düzenleme tekrar",
+      "description": "Düzenleme tekrar",
+      "content": "Düzenleme tekrar",
+      "id": "ef26"
     },
     {
-      "id": "2",
-      "title": "React Nedir",
-      "desc": "React bir js kütüphanesidir",
-      "content": "Web ve mobil uygulamarı için kullanılan bir js kütüphanesidir"
-    },
-    {
-      "id": "2845",
-      "title": "Deneme",
-      "description": "Deneme",
-      "content": "Deneme"
+      "id": "e679",
+      "title": "Deneme title",
+      "description": "Deneme desc",
+      "content": "Deneme content"
     }
   ]
 }

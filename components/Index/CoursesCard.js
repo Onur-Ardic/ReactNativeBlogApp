@@ -1,6 +1,7 @@
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
+import DeleteButton from '../Uİ/DeleteButton'
 
 export default function CoursesCard({ data }) {
   const navigation = useNavigation()
@@ -17,7 +18,9 @@ export default function CoursesCard({ data }) {
           }
         >
           <View style={styles.blogCard}>
+            <DeleteButton id={item.id} />
             <Text style={styles.itemTitle}>{item.title}</Text>
+            <Text style={styles.itemDescription}>{item.description}</Text>
             <Text style={styles.itemContent}>{item.content}</Text>
             <Text style={styles.alert}>Devamını okumak için tıklayın</Text>
           </View>
